@@ -1,0 +1,103 @@
+{
+  "name": "n8n-nodes-gridplus",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for GridPlus Lattice1 hardware wallet providing 21 resources and 150+ operations for device management, multi-chain signing, SafeCard handling, and enterprise automation.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-gridplus.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-gridplus#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-gridplus/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "gridplus",
+    "lattice1",
+    "hardware-wallet",
+    "ethereum",
+    "bitcoin",
+    "blockchain",
+    "crypto",
+    "signing",
+    "safecard",
+    "enterprise",
+    "web3",
+    "defi",
+    "nft",
+    "multi-chain"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "COMMERCIAL_LICENSE.md",
+    "LICENSING_FAQ.md",
+    "README.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/GridPlusLattice.credentials.js",
+      "dist/credentials/GridPlusConnect.credentials.js",
+      "dist/credentials/GridPlusNetwork.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/GridPlus/GridPlus.node.js",
+      "dist/nodes/GridPlus/GridPlusTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "gridplus-sdk": "^2.5.0",
+    "ethers": "^6.9.0",
+    "bitcoinjs-lib": "^6.1.5",
+    "axios": "^1.6.2",
+    "bip32": "^4.0.0",
+    "bip39": "^3.1.0",
+    "ecpair": "^2.1.0",
+    "tiny-secp256k1": "^2.2.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.20.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

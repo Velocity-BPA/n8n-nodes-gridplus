@@ -1,0 +1,29 @@
+# Source files
+credentials/
+nodes/
+index.ts
+
+# Config
+tsconfig.json
+.eslintrc.js
+.prettierrc
+gulpfile.js
+jest.config.js
+
+# Tests
+test/
+coverage/
+.nyc_output/
+
+# Development
+.github/
+.vscode/
+.idea/
+*.log
+*.tmp
+
+# Scripts (keep in dist)
+scripts/
+
+# Documentation (keep in dist)
+docs/
